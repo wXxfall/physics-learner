@@ -1,0 +1,16 @@
+{
+  "name": "english-analyzer",
+  "version": "1.0.0",
+  "description": "英语句子分析工具 - 分析主谓宾定状补，识别语法并提供例句",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "compromise": "^14.14.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

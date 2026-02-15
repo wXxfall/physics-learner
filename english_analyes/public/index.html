@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>英语句子分析器</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/compromise@14.14.0/builds/compromise.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>英语句子分析器</h1>
+      <p>分析英语句子的主谓宾定状补，识别语法并提供例句</p>
+    </header>
+
+    <main>
+      <section class="input-section">
+        <div class="input-wrapper">
+          <textarea id="sentenceInput" placeholder="请输入英语句子，例如：I play football every day." rows="3"></textarea>
+          <button id="analyzeBtn" class="btn-primary">分析句子</button>
+        </div>
+      </section>
+
+      <section id="resultSection" class="result-section hidden">
+        <div class="result-card">
+          <h2>分析结果</h2>
+          <div class="sentence-display">
+            <span id="displaySentence"></span>
+          </div>
+
+          <div class="grammar-info">
+            <h3>语法类型</h3>
+            <div id="grammarType" class="grammar-badge"></div>
+          </div>
+
+          <div class="components">
+            <h3>句子成分</h3>
+            <div class="component-grid">
+              <div class="component-item subject">
+                <div class="component-label">主语 (Subject)</div>
+                <div id="subject" class="component-value"></div>
+              </div>
+              <div class="component-item predicate">
+                <div class="component-label">谓语 (Predicate)</div>
+                <div id="predicate" class="component-value"></div>
+              </div>
+              <div class="component-item object">
+                <div class="component-label">宾语 (Object)</div>
+                <div id="object" class="component-value"></div>
+              </div>
+              <div class="component-item attribute">
+                <div class="component-label">定语 (Attribute)</div>
+                <div id="attribute" class="component-value"></div>
+              </div>
+              <div class="component-item adverbial">
+                <div class="component-label">状语 (Adverbial)</div>
+                <div id="adverbial" class="component-value"></div>
+              </div>
+              <div class="component-item complement">
+                <div class="component-label">补语 (Complement)</div>
+                <div id="complement" class="component-value"></div>
+              </div>
+            </div>
+          </div>
+
+          <div id="examplesSection" class="examples-section">
+            <h3>相同语法例句</h3>
+            <div id="examplesList" class="examples-list"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="history-section">
+        <div class="history-header">
+          <h2>历史记录</h2>
+          <button id="clearHistoryBtn" class="btn-secondary">清空历史</button>
+        </div>
+        <div id="historyList" class="history-list"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/grammarPatterns.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
