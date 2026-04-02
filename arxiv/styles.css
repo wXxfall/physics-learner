@@ -1,0 +1,257 @@
+/* arXiv Beautifier 样式文件 */
+/* 版本: 1.0.0 */
+/* 作者: PhysicsLearner */
+
+/* 全局样式重置 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 美化容器 */
+#arxiv-beautified {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+/* 美化论文列表项 */
+.beautified-paper-entry {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.beautified-paper-entry:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+/* 美化论文详情页 */
+.beautified-paper-detail {
+    background: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+/* 美化搜索结果 */
+.beautified-search-results {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 美化标题 */
+h1, h2, h3, h4, h5, h6 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* 美化链接 */
+a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+/* 美化按钮 */
+button, input[type="submit"] {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+/* 美化输入框 */
+input[type="text"], input[type="search"] {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 100%;
+    max-width: 500px;
+}
+
+input[type="text"]:focus, input[type="search"]:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+/* 美化列表 */
+ul, ol {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* 美化表格 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: 600;
+}
+
+/* 美化代码 */
+pre, code {
+    background-color: #f5f5f5;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+}
+
+pre {
+    padding: 15px;
+    overflow-x: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* 美化引用 */
+blockquote {
+    border-left: 4px solid #3498db;
+    padding-left: 15px;
+    margin: 15px 0;
+    color: #666;
+    font-style: italic;
+}
+
+/* 美化导航栏 */
+#header {
+    background-color: white;
+    padding: 15px 0;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 美化页脚 */
+#footer {
+    background-color: white;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 8px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #666;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    #arxiv-beautified {
+        padding: 10px;
+        max-width: 100%;
+    }
+    
+    .beautified-paper-entry,
+    .beautified-paper-detail,
+    .beautified-search-results {
+        padding: 15px;
+    }
+}
+
+/* 加载动画 */
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.loading {
+    animation: pulse 1.5s infinite;
+}
+
+/* 深色模式支持 */
+@media (prefers-color-scheme: dark) {
+    #arxiv-beautified {
+        background-color: #1a1a1a;
+        color: #e0e0e0;
+    }
+    
+    .beautified-paper-entry,
+    .beautified-paper-detail,
+    .beautified-search-results,
+    #header,
+    #footer {
+        background-color: #2d2d2d;
+        color: #e0e0e0;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        color: #f0f0f0;
+    }
+    
+    a {
+        color: #4da6ff;
+    }
+    
+    a:hover {
+        color: #3399ff;
+    }
+    
+    input[type="text"], input[type="search"] {
+        background-color: #3d3d3d;
+        border-color: #555;
+        color: #e0e0e0;
+    }
+    
+    pre, code {
+        background-color: #3d3d3d;
+        color: #e0e0e0;
+    }
+    
+    th {
+        background-color: #3d3d3d;
+    }
+    
+    table {
+        border-color: #555;
+    }
+}
